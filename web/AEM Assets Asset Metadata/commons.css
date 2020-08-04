@@ -1,0 +1,49 @@
+.rollout-popover {
+    line-height: normal;
+    padding: 0;
+}
+
+.msm-rollout-options {
+    white-space: nowrap;
+    background-color: #454545;
+    color: #DADADA;
+}
+
+.msm-rollout-option {
+	font-size: 1rem;
+    height: 2.625rem;
+    line-height: 2.625rem;
+    padding: 0 1rem;
+}
+
+.msm-rollout-option a {
+	text-decoration: none;
+	color: #DADADA;
+}
+
+.msm-rollout-option:hover {
+	background-color: #3287d2;
+}
+.cq-msm-property-toggle-inheritance coral-icon {
+    margin-top: 0.5rem;
+    margin-left: 0.4rem;
+    float: right;
+}
+
+.cq-msm-property-toggle-inheritance coral-icon {
+	color: #4b4b4b;
+}
+
+.coral--dark .cq-msm-property-toggle-inheritance coral-icon {
+    color: #FFFFFF;
+}
+
+.coral-Form--vertical .coral-Form-field.cq-msm-lockable-field {
+    display: inline-block;
+    width: 94%;
+}
+
+.coral-Form--vertical .coral-Form-field.coral-InputGroup.cq-msm-lockable-field {
+    display: inline-table;
+}
+

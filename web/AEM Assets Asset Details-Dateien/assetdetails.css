@@ -1,0 +1,80 @@
+#asset-mainimage {
+	margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+.foundation-content-current .rendition-detail{
+	top: 0;
+}
+
+/* Styles related to rendition preview on asset details page */
+.rendition-detail-view {
+    padding: 15px;
+}
+
+.rendition-detail-separator{
+    font-weight:bolder;
+    padding: 15px;
+}
+
+/* The following styles specifies the width and height of the parent of the S7 video rendition container */
+.rendition-detail-view {
+    height: 90%;
+    width: 78%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position:relative;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.rendition-detail-view-show-metadata {
+    width: 70%;
+}
+
+.rendition-detail-view-hide-metadata {
+    width: 100%;
+}
+
+.asset-detail-view {
+    height: 90%;
+    width: 100%;
+    display: block;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    position:absolute;
+    background-color: #ffffff;
+}
+
+.asset-detail-views-image,.asset-detail-views-audio {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.asset-detail-view .s7basiczoomviewer .s7zoominbutton,
+.asset-detail-view .s7basiczoomviewer .s7zoomoutbutton,
+.asset-detail-view .s7basiczoomviewer .s7fullscreenbutton,
+.asset-detail-view .s7basiczoomviewer .s7zoomresetbutton {
+    cursor: pointer;
+}
+.dam-zoom-canvas-class {
+	outline:none;
+}
+.dam-zoom-canvas-class:focus {
+	border: .0625rem solid;
+	box-shadow: 0 0 3px #326ec8;
+	border-color: #326ec8;
+	margin: 1px 1px 1px 1px;
+}

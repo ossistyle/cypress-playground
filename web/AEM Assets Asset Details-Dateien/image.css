@@ -1,0 +1,101 @@
+/* ================== Scene7 Zoom Component ================== */
+.dam-zoom-buttons{
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dam-navigator-buttons{
+    background: transparent;
+    position: absolute;
+    bottom: 50%;
+    z-index: 1000;
+    width: 100%;
+}
+
+.dam-zoom-button{
+    padding: .2rem;
+}
+
+.dam-image-preview{
+    position: absolute;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.rend-copy-url{
+    position:absolute;
+    left:0;
+    right:0;
+}
+
+.dm-asset-detail {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.dam-navigate-button {
+    min-width: inherit;
+    display: inline;
+}
+
+.page-navigation-options {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dam-zoom-container {
+    position: relative;
+    margin: auto;
+ }
+
+.dam-zoom-actionBar {
+    display: flex;
+ }
+
+.dam-navigation-actionBar {
+    display: flex;
+}
+
+.dam-navigation-container {
+    position: relative;
+    margin: auto;
+}
+
+.dam-display-page-left {
+    line-height: 2.375rem;
+    border-left: 1px solid;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.dam-display-page-right {
+    line-height: 2.375rem;
+    border-right: 1px solid;
+    padding-right: 0.5rem;
+    margin-left: 0.5rem !important;
+}
+
+.current-page {
+    width: 15px;
+}
+
+/* Override workaround for missing close icon - CQ-4201102*/
+.ui-widget-header .ui-icon {
+    background-image: url(image/images/ui-icons_222222_256x240.png) !important;
+}
+.s7basicvideoviewer .s7videoplayer {
+    position: relative !important;      
+}
+

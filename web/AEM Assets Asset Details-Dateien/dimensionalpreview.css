@@ -1,0 +1,10 @@
+.asset-detail-view.dimensional-container, .rendition-canvas {
+    height: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+}

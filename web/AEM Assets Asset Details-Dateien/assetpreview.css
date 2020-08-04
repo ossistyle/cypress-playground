@@ -1,0 +1,27 @@
+#preview-container {
+    height: 100%;
+	top:0; 
+    left:0; 
+    bottom:0; 
+    right: 0; 
+    position: absolute; 
+    overflow:hidden;
+}
+
+#preview-container .dm-setup-info-container {
+    height: 100%;
+	top:0; 
+    left:0; 
+    bottom:0; 
+    right: 0; 
+    position: absolute; 
+}
+
+#preview-container > div > #image-preview {
+    height: 100%;
+	top:0; 
+    left:0; 
+    bottom:0; 
+    right: 0; 
+    position: absolute; 
+}

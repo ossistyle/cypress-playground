@@ -1,0 +1,115 @@
+/*
+ * ADOBE CONFIDENTIAL
+ *
+ * Copyright 2015 Adobe Systems Incorporated
+ * All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and may be covered by U.S. and Foreign Patents,
+ * patents in process, and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+.foundation-layout-form-mode-default .cq-siteadmin-admin-properties-fieldset-hide-in-default,
+.foundation-layout-form-mode-edit .cq-siteadmin-admin-properties-alert-hide-in-edit {
+    display: none;
+}
+
+.permission-action-button {
+    width: 50%;
+    margin-left: 0!important;
+}
+
+.cq-siteadmin-admin-properties-addpermission:disabled {
+    display: inline-block;
+}
+
+.foundation-layout-form.foundation-layout-form-mode-edit .permission-disabled .foundation-field-edit {
+    display: none !important;
+}
+
+.foundation-layout-form.foundation-layout-form-mode-edit .permission-disabled .foundation-field-readonly {
+    display: block !important;
+}                              
+
+.cq-siteadmin-admin-properties-userpicker li .foundation-layout-flexmedia-bd {
+    width: calc(100% - 3rem - 0.625rem);
+}
+
+.coral-FixedColumn-column > .foundation-nestedcheckboxlist:first-of-type {
+    padding: 0;
+}
+
+.foundation-nestedcheckboxlist .foundation-field-readonly.coral-Form-field coral-icon {
+    margin-right: 0.5rem;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions.list .card-page .main {
+    width: 12.5rem;
+    border-right: 0.0625rem solid #d2d2d2;
+    height: 100%;
+    padding-left: 0.625rem;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions.list .card-page .main, 
+.cq-siteadmin-admin-properties-effective-permissions.list .card-page .permission {
+    line-height: 3.125rem;
+    vertical-align: middle;
+    margin-top: 0;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions.list header.card-page .main, 
+.cq-siteadmin-admin-properties-effective-permissions.list header.card-page .permission {
+    font-weight: bold;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions.list article.card-page .permission {
+    display: inline-block;
+    line-height: 3.125rem;
+    vertical-align: middle;
+    float: left;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions.list header.card-page {
+    padding: 0;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions.list .card-page .permission {
+    width: 7rem;
+    text-align: center;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions.list header.card-page .sort {
+    float: right;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions article.card-page > .label{
+    border-bottom: 0.0625rem solid #d2d2d2;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions {
+   max-height: 35rem;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions article.card-page .main.full-info {
+    text-transform: none;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions article.card-page .main.full-info > .path {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 0.4375rem;
+}
+
+.cq-siteadmin-admin-properties-effective-permissions .card-page .main.full-info > .restrictions {
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.cq-siteadmin-admin-properties-effective-permissions.list .card-page .main.full-info{
+    line-height: 1.125rem; 
+}

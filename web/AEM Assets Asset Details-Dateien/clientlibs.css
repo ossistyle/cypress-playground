@@ -1,0 +1,36 @@
+.asset-navigator-next {
+    padding-left: 0px;
+    z-index: 1000;
+}
+
+.asset-navigator-prev {
+    padding-right: 0px;
+    z-index: 1000;
+}
+
+.assetdetails-asset-title {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 1000px;
+}
+
+.assetdetails-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.assetdetails-title-currentasset-count {
+    font-weight: bold;
+    font-size: .9375rem;
+}
+
+.assetdetails-title-totalasset-count {
+    font-weight: normal;
+    font-size: .9375rem;
+}
+
+.asset-navigator-action-container {
+    position: absolute;
+    right: 0rem;
+}

@@ -1,0 +1,230 @@
+coral-select.cq-common-admin-timeline-filter {
+  width: 100%;
+}
+coral-select.cq-common-admin-timeline-filter button[is=coral-button] {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+}
+.cq-common-admin-timeline-scrollarea {
+  box-shadow: 0 1px 0 #e6e6e6 inset;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 100;
+}
+.cq-common-admin-timeline-events .cq-common-admin-timeline-event {
+  cursor: pointer;
+}
+/* override cui defaults */
+.cq-common-admin-timeline section,
+.cq-common-admin-timeline-item {
+  border: none;
+  box-shadow: none;
+  padding: 0.625rem 0.9375rem;
+}
+.cq-common-admin-timeline section .cq-common-admin-timeline-event-icon,
+.cq-common-admin-timeline-item .cq-common-admin-timeline-event-icon {
+  width: 1.6875rem;
+  height: 2rem;
+  float: left;
+  padding-top: 0.1875rem;
+}
+.cq-common-admin-timeline section .cq-common-admin-timeline-event-icon img,
+.cq-common-admin-timeline-item .cq-common-admin-timeline-event-icon img {
+  margin-left: -0.375rem;
+  width: inherit;
+}
+.cq-common-admin-timeline section .cq-common-admin-timeline-event-text.cq-common-admin-timeline-state-empty,
+.cq-common-admin-timeline-item .cq-common-admin-timeline-event-text.cq-common-admin-timeline-state-empty,
+.cq-common-admin-timeline section .cq-common-admin-timeline-event-text.cq-common-admin-timeline-state-multi,
+.cq-common-admin-timeline-item .cq-common-admin-timeline-event-text.cq-common-admin-timeline-state-multi,
+.cq-common-admin-timeline section .cq-common-admin-timeline-event-text.cq-common-admin-timeline-state-noentries,
+.cq-common-admin-timeline-item .cq-common-admin-timeline-event-text.cq-common-admin-timeline-state-noentries,
+.cq-common-admin-timeline section .cq-common-admin-timeline-event-text.cq-common-admin-timeline-state-unavailable,
+.cq-common-admin-timeline-item .cq-common-admin-timeline-event-text.cq-common-admin-timeline-state-unavailable,
+.cq-common-admin-timeline section .cq-common-admin-timeline-event-text.cq-common-admin-timeline-state-error,
+.cq-common-admin-timeline-item .cq-common-admin-timeline-event-text.cq-common-admin-timeline-state-error {
+  padding-left: 0;
+  color: #999999;
+}
+.cq-common-admin-timeline section .cq-common-admin-timeline-event-title,
+.cq-common-admin-timeline-item .cq-common-admin-timeline-event-title {
+  font-weight: 700;
+  font-style: normal;
+}
+.cq-common-admin-timeline section .cq-common-admin-timeline-event-button,
+.cq-common-admin-timeline-item .cq-common-admin-timeline-event-button {
+  width: 100%;
+  margin-top: 0.375rem;
+}
+.cq-common-admin-timeline section:not(.version-section):not(.cq-common-admin-timeline-toolbar-bar),
+.cq-common-admin-timeline-item {
+  border-bottom: 1px solid #c8c8c8;
+}
+.version-section-container {
+  border-bottom: 1px solid #c8c8c8;
+}
+.cq-common-admin-timeline-event-balloon {
+  position: relative;
+  clear: both;
+  border-radius: 0.3125rem;
+  margin-top: 0.5rem;
+  padding: 0.5625rem 0.5625rem 0.6875rem;
+  border: solid 1px #cacaca;
+  background-color: #ededed;
+  line-height: 1.125rem;
+  font-size: 0.875rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  /*border-trick to create triangle-balloon-carrot*/
+  /*balloon carrot, same color as the comment balloon*/
+  /*balloon carrot "border"r*/
+}
+.cq-common-admin-timeline-event-balloon:after,
+.cq-common-admin-timeline-event-balloon:before {
+  position: absolute;
+  content: "";
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+.cq-common-admin-timeline-event-balloon:after {
+  top: -0.4375rem;
+  left: 0.5625rem;
+  border-left-width: 0.375rem;
+  border-right-width: 0.375rem;
+  border-bottom-width: 0.4375rem;
+  border-bottom-color: #ededed;
+}
+.cq-common-admin-timeline-event-balloon:before {
+  top: -0.5rem;
+  left: 0.5rem;
+  border-left-width: 0.4375rem;
+  border-right-width: 0.4375rem;
+  border-bottom-width: 0.5rem;
+  border-bottom-color: #cacaca;
+}
+/*** inactive events ***/
+/* hide any "expanded" layer (e.g. full description in comments) inside inactive events */
+.cq-common-admin-timeline-event .cq-common-admin-timeline-event-expanded {
+  display: none;
+}
+/* show any "collapsed" layer (e.g. short description in comments) inside inactive events */
+.cq-common-admin-timeline-event .cq-common-admin-timeline-event-collapsed {
+  display: block;
+}
+/*** active events ***/
+.cq-common-admin-timeline-event.is-active {
+  background-color: #dfdfdf;
+}
+/* show any "expanded" layer inside inactive events */
+.cq-common-admin-timeline-event.is-active .cq-common-admin-timeline-event-expanded {
+  display: block;
+}
+/* hide any "collapsed" layer inside inactive events */
+.cq-common-admin-timeline-event.is-active .cq-common-admin-timeline-event-collapsed {
+  display: none;
+}
+.cq-common-admin-timeline-more-button {
+  width: 100%;
+}
+.cq-common-admin-timeline-event :focus {
+  border: .0625rem solid;
+  box-shadow: 0 0 3px #326ec8;
+  border-color: #326ec8;
+}
+.cq-common-admin-timeline-toolbar {
+  z-index: 200;
+  padding-bottom: 0.25rem;
+  width: 15.625rem;
+}
+.cq-common-admin-timeline-item.cq-common-admin-timeline-toolbar-bar {
+  border-width: 0;
+  border-bottom-width: 0;
+  border-top: 0.0625rem solid #f0f0f0;
+}
+.cq-common-admin-timeline-item.cq-common-admin-timeline-toolbar-bar form input {
+  width: 10rem;
+  margin-bottom: 0.3125rem;
+  float: left;
+}
+.cq-common-admin-timeline-item.cq-common-admin-timeline-toolbar-bar .cq-common-admin-timeline-event-icon {
+  padding-top: 0.25rem;
+  width: 1.8125rem;
+}
+.cq-common-admin-timeline-item.cq-common-admin-timeline-toolbar-bar .cq-common-admin-timeline-event-icon coral-icon {
+  margin-top: 0.3125rem;
+}
+.cq-common-admin-timeline-item.cq-common-admin-timeline-toolbar-bar .cq-common-admin-timeline-event-icon img {
+  margin-left: -0.3125rem;
+}
+.cq-common-admin-timeline-item.cq-common-admin-timeline-toolbar-bar .cq-common-admin-timeline-toolbar-actions-button {
+  float: right;
+  padding-top: 0.625rem;
+  padding-left: 0.8125rem;
+  cursor: pointer;
+}
+.cq-common-admin-timeline-toolbar-actions {
+  padding: 0.625rem 0.9375rem;
+  background-color: #dfdfdf;
+}
+.cq-common-admin-timeline-toolbar-actions .dropdown-container {
+  width: 100%;
+}
+.cq-common-admin-timeline-toolbar-actions .dropdown-container button {
+  width: 100%;
+}
+.cq-common-admin-timeline-toolbar-actions .cq-common-admin-timeline-toolbar-actions-button-2cols,
+.cq-common-admin-timeline-toolbar-actions .cq-common-admin-timeline-toolbar-actions-button-2cols-last {
+  margin-top: 0.5rem;
+  min-width: 49%;
+  margin-right: 2%;
+}
+.cq-common-admin-timeline-toolbar-actions .cq-common-admin-timeline-toolbar-actions-button-2cols-last {
+  margin-right: 0;
+}
+.cq-common-admin-timeline-toolbar-actions-main button[is=coral-button] {
+  float: none;
+  width: 100%;
+}
+.cq-common-admin-timeline-toolbar-actions-main button[is=coral-button] + button[is=coral-button] {
+  margin-top: 0.625rem;
+}
+.cq-common-admin-timeline-alerts-workflow-ribbon {
+  background-color: #fad269;
+  border-bottom: solid 0.0625rem #eaba5e;
+  padding: 0.5rem 0 0.5625rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.cq-common-admin-timeline-alerts-workflow-actions {
+  padding: 0.5rem 0.625rem 0.625rem;
+  background-color: #d3d3d3;
+}
+.cq-common-admin-timeline-alerts-workflow-actions button[is=coral-button] {
+  width: 100%;
+  margin-top: 0.375rem;
+}
+.cq-common-admin-timeline-alerts-workflow-action {
+  padding: 0.625rem;
+  background-color: #d3d3d3;
+}
+.cq-common-admin-timeline-alerts-workflow-action .dropdown-container {
+  width: 100%;
+}
+.cq-common-admin-timeline-alerts-workflow-action .dropdown-container button {
+  width: 100%;
+}
+.cq-common-admin-timeline-alerts-workflow-action .cq-common-admin-timeline-alerts-workflow-actions-buttonbar {
+  margin-top: 0.5rem;
+}
+.cq-common-admin-timeline-alerts-workflow-action .cq-common-admin-timeline-alerts-workflow-actions-buttonbar button[is=coral-button] {
+  min-width: 49%;
+}
+.cq-rail-timeline .foundation-layout-panel-body {
+  overflow-x: hidden;
+}

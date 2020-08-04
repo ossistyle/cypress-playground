@@ -1,0 +1,27 @@
+.html-added {
+    background-color: #CCEBB8;
+    color: #74973A;
+    text-decoration: none;
+}
+
+.html-removed {
+    text-decoration: none;
+    color: #B30000;
+    background-color: #FFCCCC;
+}
+
+.cq-component-changed {
+    border: 0.25rem solid #B9DAFF !important;
+}
+
+.cq-component-moved {
+    border: 0.25rem solid #B9DAFF !important;
+}
+
+.cq-component-added {
+    border: 0.25rem solid #CCEBB8 !important;
+}
+
+.cq-component-removed {
+    border: 0.25rem solid #FFCCCC !important;
+}

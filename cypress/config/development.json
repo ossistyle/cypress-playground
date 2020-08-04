@@ -1,0 +1,7 @@
+{
+    "baseUrl": "http://dev-aemsp.ecx.local:4502",
+    "env": {
+        "USERNAME": "qa",
+        "PASSWORD": "5Uvem1gIcnuX{Al&F5mkoCc>"
+    }
+}

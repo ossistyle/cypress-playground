@@ -1,0 +1,19 @@
+.cq-AssetPicker.cq-AssetPicker-iframe {
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+.cq-AssetPicker.cq-AssetPicker-modal {
+    width: auto;
+    margin: 0;
+    right: 5%;
+    bottom: 5%;
+    z-index: 12000;
+}
+
+
+.cq-wcm-pagethumbnail .foundation-layout-util-vmargin {
+    text-align: center;
+}
+

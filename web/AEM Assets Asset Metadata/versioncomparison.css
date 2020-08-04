@@ -1,0 +1,197 @@
+/*
+ * ADOBE CONFIDENTIAL
+ * __________________
+ *
+ *  Copyright 2018 Adobe Systems Incorporated
+ *  All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+#VersionComparisonSideBySide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 5000;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+#VersionComparisonSideBySide coral-actionbar-primary {
+  width: 100%;
+  left: 0;
+}
+#VersionComparisonSideBySide coral-actionbar-primary coral-actionbar-item:first-of-type {
+  width: 50%;
+}
+#VersionComparisonSideBySide coral-actionbar-primary coral-actionbar-item > button,
+#VersionComparisonSideBySide coral-actionbar-primary coral-tag {
+  vertical-align: middle;
+}
+#VersionComparisonSideBySide .cfm-version {
+  height: calc(100% - 3.25rem);
+  overflow: auto;
+}
+#VersionComparisonSideBySide .cfm-version .editor img {
+  max-width: 240px;
+}
+#VersionComparisonSideBySide .cfm-version:nth-of-type(2) {
+  left: 50%;
+  border-left: 1px solid #f8f8f8;
+}
+#VersionComparisonSideBySide .html-added caption {
+  background-color: #CCEBB8;
+}
+#VersionComparisonSideBySide .cfm-variation-missing {
+  text-align: center;
+  color: #707070;
+  font-size: 13px;
+  font-weight: bold;
+}
+#VersionComparisonSideBySide .cfm-compare-versions-toolbar {
+  background-color: #f5f5f5;
+  border-bottom: 0.0625rem solid #E1E1E1;
+  padding: 0.4375rem 0 0.375rem;
+  height: 3.25rem;
+}
+#VersionComparisonSideBySide .cfm-compare-versions-revert-action {
+  margin-right: 20px;
+}
+#VersionComparisonSideBySide .cfm-variation-missing {
+  text-align: center;
+}
+#VersionComparisonSideBySide .cfm-content-title {
+  text-transform: uppercase;
+  color: #707070;
+  font-weight: bold;
+  background: white;
+  /* trim too long title */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#VersionComparisonSideBySide .cfm-variation > .cfm-content-title {
+  font-size: 13px;
+  margin: 0;
+  padding: 0 0 12px;
+  vertical-align: bottom;
+  line-height: 100%;
+  border-bottom: 1px solid #eaeaea;
+}
+#VersionComparisonSideBySide .cfm-elements,
+#VersionComparisonSideBySide .cfm-titles {
+  display: flex;
+  background: #F4F3F4;
+}
+#VersionComparisonSideBySide .cfm-elements:last-child .cfm-element {
+  border-bottom: 8px solid #f1f1f1;
+}
+#VersionComparisonSideBySide .cfm-left-col {
+  margin-right: 4px;
+  border-right: 1px solid #DFDEDF;
+}
+#VersionComparisonSideBySide .cfm-right-col {
+  margin-left: 4px;
+  border-left: 1px solid #DFDEDF;
+}
+#VersionComparisonSideBySide .cfm-titles .cfm-content-title {
+  width: 50%;
+  font-size: 13px;
+  padding: 30px 48px 12px;
+  vertical-align: bottom;
+  line-height: 100%;
+}
+#VersionComparisonSideBySide .cfm-titles .cfm-content-title::after {
+  content: "";
+  display: block;
+  margin-top: 12px;
+  border-bottom: 1px solid #eaeaea;
+}
+#VersionComparisonSideBySide .cfm-element {
+  width: 50%;
+  font-size: 14px;
+  padding: 0 48px 16px;
+  line-height: 15pt;
+  background: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#VersionComparisonSideBySide .cfm-element .cfm-content-title {
+  font-size: 11px;
+}
+#VersionComparisonSideBySide .cfm-element img {
+  max-height: 240px;
+  max-width: 240px;
+}
+#VersionComparisonSideBySide del {
+  color: #f85164;
+  background: rgba(255, 0, 0, 0.13);
+  text-decoration: line-through;
+}
+#VersionComparisonSideBySide del img {
+  border: 5px solid #f85164;
+  box-sizing: border-box;
+}
+#VersionComparisonSideBySide ins {
+  color: #33ac29;
+  background: rgba(20, 150, 20, 0.14);
+  text-decoration: none;
+}
+#VersionComparisonSideBySide ins img {
+  border: 5px solid #33ac29;
+  box-sizing: border-box;
+}
+#VersionComparisonSideBySide mark {
+  color: #3676cb;
+  background: rgba(150, 180, 230, 0.33);
+}
+#VersionComparisonSideBySide mark img {
+  border: 5px solid #3676cb;
+  box-sizing: border-box;
+}
+/* hide the elements in the right column if fullscreen view is enabled for the left column */
+#VersionComparisonSideBySide.cfm-fullscreen-left-col .cfm-right-col {
+  display: none;
+}
+#VersionComparisonSideBySide.cfm-fullscreen-left-col .cfm-content-title,
+#VersionComparisonSideBySide.cfm-fullscreen-left-col .cfm-element {
+  width: 100%;
+}
+/* hide the elements in the left column if fullscreen view is enabled for the right column */
+#VersionComparisonSideBySide.cfm-fullscreen-right-col .cfm-left-col {
+  display: none;
+}
+#VersionComparisonSideBySide.cfm-fullscreen-right-col .cfm-content-title,
+#VersionComparisonSideBySide.cfm-fullscreen-right-col .cfm-element {
+  width: 100%;
+}
+
+/*
+ * ADOBE CONFIDENTIAL
+ * __________________
+ *
+ *  Copyright 2018 Adobe Systems Incorporated
+ *  All Rights Reserved.
+ *
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and are protected by trade secret or copyright law.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+
+.cq-common-admin-timeline-event-action-compare {
+  width: 100%;
+  margin-top: 0.2rem;
+}

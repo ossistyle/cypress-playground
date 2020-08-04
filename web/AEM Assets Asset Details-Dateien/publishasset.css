@@ -1,0 +1,11 @@
+#selectpublish .modal-body label {
+	width: 100%;
+}
+
+#activation-success {
+    z-index: 10011;
+}
+
+#activation-error {
+    z-index: 10011;
+}
