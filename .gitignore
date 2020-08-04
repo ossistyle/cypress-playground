@@ -1,0 +1,9 @@
+node_modules
+cypress/videos
+cypress/screenshots
+allure-results
+allure-report
+.idea/**
+.backup
+.history
+backup
