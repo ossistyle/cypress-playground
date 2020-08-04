@@ -20,22 +20,4 @@ module.exports = (on, config) => {
   on('task', percyHealthCheck);
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-  /* const tmpConfig = config.env;
-
-  const file = process.env.ENVIRONMENT || 'development';
-  const envConfig = getConfigurationByFile(file);
-  config.env = Object.assign({}, envConfig, tmpConfig);
-  config.env.environment = process.env.ENVIRONMENT;
-  config.env.language = process.env.LANGUAGE;
-  return config; */
 };
-
-// promisified fs module
-/* const fs = require('fs-extra');
-const path = require('path');
-
-function getConfigurationByFile(file) {
-  const pathToConfigFile = path.resolve('cypress', 'config', `${file}.json`);
-
-  return fs.outputJsonSync(pathToConfigFile);
-} */
