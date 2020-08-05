@@ -1,0 +1,22 @@
+{
+    "login_welcome_message": 
+    {
+        "de": "Willkommen bei Adobe Experience Manager",
+        "en": "Welcome to Adobe Experience Manager"
+    },
+    "login_values_not_match":
+    {
+        "de": "Benutzername und Kennwort stimmen nicht überein",
+        "en": "User name and password do not match"
+    },
+    "login_username_placeholder":
+    {
+        "de": "Benutzername",
+        "en": "User name"
+    },
+    "login_password_placeholder":
+    {
+        "de": "Kennwort",
+        "en": "Password"
+    }
+}
