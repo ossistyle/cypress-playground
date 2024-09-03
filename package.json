@@ -1,27 +1,27 @@
 {
   "author": "Thomas Hoffmann",
   "dependencies": {
-    "@cypress/grep": "^4.0.1",
-    "cypress": "^13.3.0",
-    "cypress-fail-fast": "^7.1.0",
+    "@cypress/grep": "^4.1.0",
+    "cypress": "^13.14.1",
+    "cypress-fail-fast": "^7.1.1",
     "defu": "^6.1.4",
     "is-ci": "3.0.1",
-    "typescript": "^5.3.3"
+    "typescript": "^5.5.4"
   },
   "description": "Cypress Typescript Sample",
   "devDependencies": {
-    "@types/node": "^20.11.16",
-    "@typescript-eslint/eslint-plugin": "^6.20.0",
-    "@typescript-eslint/parser": "^6.20.0",
-    "eslint": "^8.56.0",
-    "eslint-config-airbnb-typescript": "^17.1.0",
+    "@types/node": "^22.5.2",
+    "@typescript-eslint/eslint-plugin": "7.1.0",
+    "@typescript-eslint/parser": "7.0.0",
+    "eslint": "8.56.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-chai-friendly": "^0.7.4",
-    "eslint-plugin-cypress": "^2.15.1",
+    "eslint-plugin-chai-friendly": "^1.0.1",
+    "eslint-plugin-cypress": "^3.5.0",
     "eslint-plugin-import": "^2.29.1",
-    "husky": "^9.0.10",
-    "lint-staged": "^15.2.1",
-    "prettier": "^3.2.4"
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3"
   },
   "keywords": [
     "testing",
@@ -42,7 +42,7 @@
     "cy:run": "cypress run",
     "cy:dev:open": "npm run cy:open -- --config-file ./cypress/configs/cypress.dev.config.ts",
     "cy:dev:run": "npm run cy:run -- --config-file ./cypress/configs/cypress.dev.config.ts",
-    "prepare": "is-ci || husky install",
+    "prepare": "is-ci || husky",
     "tsc:build": "npx tsc --build"
   },
   "version": "1.0.0"
