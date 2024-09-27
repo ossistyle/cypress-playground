@@ -1,19 +1,19 @@
 describe('Example #1', { tags: ['@example1'] }, () => {
   before(() => {
-    cy.log('global retryableBefore');
+    cy.log('before');
   });
 
   beforeEach(() => {
-    cy.log('global beforeEach');
+    cy.log('beforeEach');
   });
 
-  it('#1', () => {
+  it('test #1', () => {
     cy.log('from it');
 
     expect(true).to.be.true;
   });
 
-  it('#2', () => {
+  it('test #2', () => {
     cy.log('from it 2');
     cy.wrap({}).then(() => {
       // @ts-expect-error works as expected
@@ -22,16 +22,16 @@ describe('Example #1', { tags: ['@example1'] }, () => {
     expect(false).to.be.false;
   });
 
-  it('#3', () => {
+  it('test #3', () => {
     cy.log('from it 2');
     expect(false).to.be.false;
   });
 
   afterEach(() => {
-    cy.log('#1 afterEach');
+    cy.log('afterEach');
   });
 
   after(() => {
-    cy.log('#1 after');
+    cy.log('after');
   });
 });
