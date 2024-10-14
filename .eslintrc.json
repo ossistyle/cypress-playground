@@ -107,7 +107,8 @@
       "error",
       { "classes": false, "functions": false, "variables": false }
     ],
-    "prefer-regex-literals": "error"
+    "prefer-regex-literals": "error",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
   },
   "settings": {
     "import/resolver": {
