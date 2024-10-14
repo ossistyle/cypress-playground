@@ -11,17 +11,20 @@ export default defineConfig({
     experimentalRunAllSpecs: true,
     testIsolation: true,
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
+    reporter: 'cypress-mochawesome-reporter',
     env: {
       FAIL_FAST_STRATEGY: 'spec',
       FAIL_FAST_ENABLED: true,
-      FAIL_FAST_BAIL: 1,
+      FAIL_FAST_BAIL: 0,
       grepIntegrationFolder: './',
-      // grepFilterSpecs: true,
+      grepFilterSpecs: true,
       grepOmitFiltered: true,
     },
     setupNodeEvents(on, config) {
       cypressGrepPlugin(config);
       failFast(on, config);
+      // eslint-disable-next-line global-require, @typescript-eslint/no-var-requires
+      require('cypress-mochawesome-reporter/plugin')(on);
       return config;
     },
   },

@@ -7,9 +7,9 @@ export default defineConfig(
   defu(
     {
       e2e: {
-        baseUrl: null
-      }
+        baseUrl: 'http://example.com',
+      },
     },
-    defaultConfig
-  )
+    defaultConfig,
+  ),
 );

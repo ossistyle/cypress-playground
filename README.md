@@ -4,27 +4,55 @@
 
 # Cypress Sample
 
-Cypress automation framework skeleton with Typescript.
+Cypress automation framework skeleton with Typescript + ESlint + Prettier + Docker/Docker-Compose.
+
+## Prerequisites
+
+1. NodeJs
+2. Git
+3. Docker
+
+## Prepare
+
+1. Create file `cypress-secrets.env`
+2. Add to the file
 
 ```
-CYPRESS-SAMPLE
-├───cypress
-│   ├───e2e
-│   ├───fixtures
-│   ├───helper
-│   ├───support
-└───node_modules
+CYPRESS_RECORD_KEY=
+CYPRESS_PROJECT_ID=
 ```
 
-## Local Setup:
+3. Change the corresponding values, if you want to record to the cypress cloud
 
-1. Install [Microsoft Visual Studio Code IDE](https://code.visualstudio.com). Ignore this if already installed.
-2. Install [Nodejs](https://nodejs.org/) on your system. Ignore this if already installed.
-3. Install [Git](https://git-scm.com/download/) on your system. Ignore this if already installed.
-4. `git clone git@github.ibm.com:Thomas-Hoffmann2/cypress-typescript-template.git` or download `master` branch zip and extract code.
-5. Open project folder with VSCode.
-6. Run `npm install` command to restore all packages.
-7. Run `npm run cypress:test` command to run test.
+## Build Docker:
+
+1. Run `docker build -t cypress/docker:v1 .`
+
+### Override Cypress Version
+
+1. Run `docker build --build-arg CYPRESS_VERSION=13.11.0 -t cypress/docker:v1 .`
+
+## Run Docker Service
+
+1. Run smoke tests on dev envirnment
+
+   `docker-compose run -e CYPRESS_ENVIRONMENT="dev" smoke-chrome`
+
+### Docker Services
+
+1. smoke-chrome
+2. regression-chrome
+3. e2e-chrome
+
+#### Extend
+
+4. Install [Microsoft Visual Studio Code IDE](https://code.visualstudio.com). Ignore this if already installed.
+5. Install [Nodejs](https://nodejs.org/) on your system. Ignore this if already installed.
+6. Install [Git](https://git-scm.com/download/) on your system. Ignore this if already installed.
+7. `git clone git@github.ibm.com:Thomas-Hoffmann2/cypress-typescript-template.git` or download `master` branch zip and extract code.
+8. Open project folder with VSCode.
+9. Run `npm install` command to restore all packages.
+10. Run `npm run cypress:test` command to run test.
 
 ## New Setup:
 

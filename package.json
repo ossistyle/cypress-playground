@@ -2,7 +2,6 @@
   "author": "Thomas Hoffmann",
   "dependencies": {
     "@cypress/grep": "^4.1.0",
-    "cypress": "^13.14.1",
     "cypress-fail-fast": "^7.1.1",
     "defu": "^6.1.4",
     "is-ci": "3.0.1",
@@ -13,6 +12,8 @@
     "@types/node": "^22.5.2",
     "@typescript-eslint/eslint-plugin": "7.1.0",
     "@typescript-eslint/parser": "7.0.0",
+    "cypress": "^13.14.0",
+    "cypress-mochawesome-reporter": "^3.8.2",
     "eslint": "8.56.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
     "eslint-config-prettier": "^9.1.0",
