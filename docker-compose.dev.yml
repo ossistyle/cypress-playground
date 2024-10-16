@@ -1,0 +1,22 @@
+services:
+  report:
+    extends:
+      file: docker-compose.base.yml
+      service: report
+
+  smoke-chrome:
+    extends:
+      file: docker-compose.base.yml
+      service: smoke-chrome
+    command: '--config-file cypress/configs/cypress.dev.config.ts --browser chrome --env grepTags=@smoke,grepFilterSpecs=true'
+
+  #####################################
+  api-chrome:
+    extends:
+      file: docker-compose.base.yml
+      service: api-chrome
+    command: '--config-file cypress/configs/cypress.dev.config.ts --browser chrome --env grepTags=@api,grepFilterSpecs=true'
+
+volumes:
+  extends:
+    file: docker-compose.base.yml

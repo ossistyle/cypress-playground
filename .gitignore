@@ -3,6 +3,7 @@
 # ignore stored screenshots and videos
 cypress/screenshots/
 cypress/videos/
+cypress/reports/
 
 # compiled output
 dist

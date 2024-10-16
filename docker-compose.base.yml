@@ -1,0 +1,42 @@
+services:
+  report:
+    image: nginx
+    container_name: nginx
+    ports:
+      - '81:80'
+    volumes:
+      - test-report-smoke-chrome:/usr/share/nginx/html/smoke/chrome
+      - test-report-api-chrome:/usr/share/nginx/html/api/chrome
+  #####################################
+  smoke-chrome:
+    depends_on:
+      - report
+    container_name: cypress-docker-smoke-chrome
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: cypress/docker:v1
+    env_file:
+      - cypress-secrets.env
+    user: node
+    volumes:
+      - test-report-smoke-chrome:/report
+
+  #####################################
+  api-chrome:
+    depends_on:
+      - report
+    container_name: cypress-docker-api-chrome
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: cypress/docker:v1
+    env_file:
+      - cypress-secrets.env
+    user: node
+    volumes:
+      - test-report-api-chrome:/report
+
+volumes:
+  test-report-smoke-chrome:
+  test-report-api-chrome:
