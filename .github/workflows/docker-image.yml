@@ -5,8 +5,9 @@ on:
     branches:
     - main
     - test
+    - test/**
     - features/**
-    - dependabot/**
+    # - dependabot/**
   pull_request:
     branches:
     - main
