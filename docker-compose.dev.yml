@@ -17,6 +17,35 @@ services:
       service: api-chrome
     command: '--config-file cypress/configs/cypress.dev.config.ts --browser chrome --env grepTags=@api,grepFilterSpecs=true'
 
+  regression-chrome:
+    extends:
+      file: docker-compose.base.yml
+      service: regression-chrome
+    command: '--config-file cypress/configs/cypress.dev.config.ts --browser chrome --env grepTags=@regression,grepFilterSpecs=true'
+
+  smoke-firefox:
+    extends:
+      file: docker-compose.base.yml
+      service: smoke-firefox
+    command: '--config-file cypress/configs/cypress.dev.config.ts --browser firefox --env grepTags=@smoke,grepFilterSpecs=true'
+
+  #####################################
+  api-firefox:
+    extends:
+      file: docker-compose.base.yml
+      service: api-firefox
+    command: '--config-file cypress/configs/cypress.dev.config.ts --browser firefox --env grepTags=@api,grepFilterSpecs=true'
+
+  regression-firefox:
+    extends:
+      file: docker-compose.base.yml
+      service: regression-firefox
+    command: '--config-file cypress/configs/cypress.dev.config.ts --browser firefox --env grepTags=@regression,grepFilterSpecs=true'
+
 volumes:
-  extends:
-    file: docker-compose.base.yml
+  test-report-smoke-chrome:
+  test-report-api-chrome:
+  test-report-regression-chrome:
+  test-report-smoke-firefox:
+  test-report-api-firefox:
+  test-report-regression-firefox:

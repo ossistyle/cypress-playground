@@ -3,7 +3,13 @@
     "target": "es6",
     "lib": ["dom", "es6"],
     "baseUrl": ".",
-    "types": ["node", "cypress", "cypress-fail-fast", "@cypress/grep"],
+    "types": [
+      "node",
+      "cypress",
+      "cypress-fail-fast",
+      "@cypress/grep",
+      "cypress-mochawesome-reporter"
+    ],
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "removeComments": true,
@@ -18,8 +24,8 @@
     "strictNullChecks": true,
     "noImplicitAny": false,
     "noImplicitReturns": false,
-    "skipLibCheck": false,
+    "skipLibCheck": false
   },
   "include": ["cypress"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules"]
 }

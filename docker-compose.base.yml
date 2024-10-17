@@ -7,6 +7,11 @@ services:
     volumes:
       - test-report-smoke-chrome:/usr/share/nginx/html/smoke/chrome
       - test-report-api-chrome:/usr/share/nginx/html/api/chrome
+      - test-report-regression-chrome:/usr/share/nginx/html/regression/chrome
+      - test-report-smoke-firefox:/usr/share/nginx/html/smoke/firefox
+      - test-report-api-firefox:/usr/share/nginx/html/api/firefox
+      - test-report-regression-firefox:/usr/share/nginx/html/regression/firefox
+
   #####################################
   smoke-chrome:
     depends_on:
@@ -37,6 +42,69 @@ services:
     volumes:
       - test-report-api-chrome:/report
 
+  #####################################
+  regression-chrome:
+    depends_on:
+      - report
+    container_name: cypress-docker-regression-chrome
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: cypress/docker:v1
+    env_file:
+      - cypress-secrets.env
+    user: node
+    volumes:
+      - test-report-regression-chrome:/report
+
+  smoke-firefox:
+    depends_on:
+      - report
+    container_name: cypress-docker-smoke-firefox
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: cypress/docker:v1
+    env_file:
+      - cypress-secrets.env
+    user: node
+    volumes:
+      - test-report-smoke-firefox:/report
+
+  #####################################
+  api-firefox:
+    depends_on:
+      - report
+    container_name: cypress-docker-api-firefox
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: cypress/docker:v1
+    env_file:
+      - cypress-secrets.env
+    user: node
+    volumes:
+      - test-report-api-firefox:/report
+
+  #####################################
+  regression-firefox:
+    depends_on:
+      - report
+    container_name: cypress-docker-regression-firefox
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: cypress/docker:v1
+    env_file:
+      - cypress-secrets.env
+    user: node
+    volumes:
+      - test-report-regression-firefox:/report
+
 volumes:
   test-report-smoke-chrome:
   test-report-api-chrome:
+  test-report-regression-chrome:
+  test-report-smoke-firefox:
+  test-report-api-firefox:
+  test-report-regression-firefox:

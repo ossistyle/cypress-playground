@@ -1,4 +1,4 @@
-describe('Api #1', { tags: ['@api'] }, () => {
+describe('Api #1', { tags: ['@api'], retries: 1 }, () => {
   before('#1 before', () => {
     cy.log('#1 before');
   });
@@ -20,7 +20,7 @@ describe('Api #1', { tags: ['@api'] }, () => {
   });
 
   it('test #1.3', () => {
-    expect(false).to.be.false;
+    expect(true).to.be.false;
   });
 
   describe('Api #1.1', {}, () => {

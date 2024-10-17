@@ -12,6 +12,13 @@ export default defineConfig({
     testIsolation: true,
     specPattern: 'cypress/e2e/**/*.cy.{js,jsx,ts,tsx}',
     reporter: 'cypress-mochawesome-reporter',
+    reporterOptions: {
+      charts: true,
+      reportPageTitle: 'custom-title',
+      embeddedScreenshots: true,
+      inlineAssets: true,
+      saveAllAttempts: true,
+    },
     env: {
       FAIL_FAST_STRATEGY: 'spec',
       FAIL_FAST_ENABLED: true,
@@ -20,6 +27,8 @@ export default defineConfig({
       grepFilterSpecs: true,
       grepOmitFiltered: true,
     },
+    video: true,
+    screenshotOnRunFailure: true,
     setupNodeEvents(on, config) {
       cypressGrepPlugin(config);
       failFast(on, config);

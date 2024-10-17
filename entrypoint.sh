@@ -13,8 +13,6 @@ npx cypress verify
 npx cypress info
 npx cypress version
 
-printf "\n\nRunning tests on: ${CYPRESS_ENVIRONMENT}\n\n"
-
 rm -r /report/*
 
 npm run cy:run -- -q $RECORD $@

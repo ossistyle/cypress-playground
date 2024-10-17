@@ -22,37 +22,19 @@ CYPRESS_RECORD_KEY=
 CYPRESS_PROJECT_ID=
 ```
 
-3. Change the corresponding values, if you want to record to the cypress cloud
+3. Change the corresponding values, if you want to record the test runs to the Cypress Cloud
 
-## Build Docker:
+## Run all at once
 
-1. Run `docker build -t cypress/docker:v1 .`
+1. Run `docker-compose -f docker-compose.dev.yml up --remove-orphans -d --build --force-recreate`
 
-### Override Cypress Version
-
-1. Run `docker build --build-arg CYPRESS_VERSION=13.11.0 -t cypress/docker:v1 .`
-
-## Run Docker Service
-
-1. Run smoke tests on dev envirnment
-
-   `docker-compose run -e CYPRESS_ENVIRONMENT="dev" smoke-chrome`
-
-### Docker Services
-
-1. smoke-chrome
-2. regression-chrome
-3. e2e-chrome
-
-#### Extend
-
-4. Install [Microsoft Visual Studio Code IDE](https://code.visualstudio.com). Ignore this if already installed.
-5. Install [Nodejs](https://nodejs.org/) on your system. Ignore this if already installed.
-6. Install [Git](https://git-scm.com/download/) on your system. Ignore this if already installed.
-7. `git clone git@github.ibm.com:Thomas-Hoffmann2/cypress-typescript-template.git` or download `master` branch zip and extract code.
-8. Open project folder with VSCode.
-9. Run `npm install` command to restore all packages.
-10. Run `npm run cypress:test` command to run test.
+2. Install [Microsoft Visual Studio Code IDE](https://code.visualstudio.com). Ignore this if already installed.
+3. Install [Nodejs](https://nodejs.org/) on your system. Ignore this if already installed.
+4. Install [Git](https://git-scm.com/download/) on your system. Ignore this if already installed.
+5. `git clone git@github.ibm.com:Thomas-Hoffmann2/cypress-typescript-template.git` or download `master` branch zip and extract code.
+6. Open project folder with VSCode.
+7. Run `npm install` command to restore all packages.
+8. Run `npm run cypress:test` command to run test.
 
 ## New Setup:
 
