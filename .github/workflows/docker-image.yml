@@ -25,7 +25,7 @@ jobs:
       env:
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-      run: docker compose -f ./docker-compose.dev.yml Up -d --build
+      run: docker compose -f ./docker-compose.dev.yml up -d --build
 
     - name: Stop containers
       if: always()
