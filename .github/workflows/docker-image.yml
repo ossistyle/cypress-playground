@@ -17,7 +17,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Docker Compose Action
-      uses: hoverkraft-tech/compose-action@v2.0.2
+    - uses: actions/checkout@v4
+
+    - name: Run docker-compose
+      uses: hoverkraft-tech/compose-action@v2.0.1
       with:
         compose-file: "docker-compose.dev.yml"
+    
