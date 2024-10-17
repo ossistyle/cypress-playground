@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2.0.2
+    - name: Docker Compose Action
+      uses: hoverkraft-tech/compose-action@v2.0.2
 
     - name: Start containers
       run: docker-compose -f "docker-compose.dev.yml" up -d --build
