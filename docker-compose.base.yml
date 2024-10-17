@@ -24,8 +24,7 @@ services:
       dockerfile: ./Dockerfile
     image: cypress/docker:v1
     env_file:
-      - path:
-          - cypress-secrets.env
+      - path: ./cypress-secrets.env
         required: false
     user: node
     volumes:
@@ -41,8 +40,7 @@ services:
       dockerfile: ./Dockerfile
     image: cypress/docker:v1
     env_file:
-      - path:
-          - cypress-secrets.env
+      - path: ./cypress-secrets.env
         required: false
     user: node
     volumes:
@@ -58,8 +56,7 @@ services:
       dockerfile: ./Dockerfile
     image: cypress/docker:v1
     env_file:
-      - path:
-          - cypress-secrets.env
+      - path: ./cypress-secrets.env
         required: false
     user: node
     volumes:
@@ -74,8 +71,7 @@ services:
       dockerfile: ./Dockerfile
     image: cypress/docker:v1
     env_file:
-      - path:
-          - cypress-secrets.env
+      - path: ./cypress-secrets.env
         required: false
     user: node
     volumes:
@@ -91,8 +87,7 @@ services:
       dockerfile: ./Dockerfile
     image: cypress/docker:v1
     env_file:
-      - path:
-          - cypress-secrets.env
+      - path: ./cypress-secrets.env
         required: false
     user: node
     volumes:
@@ -108,8 +103,7 @@ services:
       dockerfile: ./Dockerfile
     image: cypress/docker:v1
     env_file:
-      - path:
-          - cypress-secrets.env
+      - path: ./cypress-secrets.env
         required: false
     user: node
     volumes:
