@@ -22,6 +22,9 @@ FROM ${BASE_TEST_IMAGE}
 # https://github.com/cypress-io/cypress/issues/1243
 ENV CI=1
 
+ENV CYPRESS_PROJECT_ID=$CYPRESS_PROJECT_ID
+ENV CYPRESS_RECORD_KEY=$CYPRESS_RECORD_KEY
+
 # should be root
 RUN id
 
