@@ -19,10 +19,5 @@ jobs:
     steps:
     - name: Docker Compose Action
       uses: hoverkraft-tech/compose-action@v2.0.2
-
-    - name: Start containers
-      run: docker-compose -f "docker-compose.dev.yml" up -d --build
-
-    - name: Stop containers
-      if: always()
-      run: docker-compose -f "docker-compose.dev.yml" down
+      with:
+        compose-file: "./docker-compose.dev.yml"
