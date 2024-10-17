@@ -33,6 +33,8 @@ ENV CYPRESS_CACHE_FOLDER=/home/node/.cache/Cypress
 RUN mkdir /report
 RUN chown -R node:node /report
 
+RUN npm install --global yarn
+
 USER node
 
 WORKDIR /home/node/app

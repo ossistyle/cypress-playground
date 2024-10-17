@@ -23,6 +23,7 @@ services:
     image: cypress/docker:v1
     env_file:
       - cypress-secrets.env
+      - required: false
     user: node
     volumes:
       - test-report-smoke-chrome:/report
@@ -38,6 +39,7 @@ services:
     image: cypress/docker:v1
     env_file:
       - cypress-secrets.env
+      - required: false
     user: node
     volumes:
       - test-report-api-chrome:/report
@@ -53,6 +55,7 @@ services:
     image: cypress/docker:v1
     env_file:
       - cypress-secrets.env
+      - required: false
     user: node
     volumes:
       - test-report-regression-chrome:/report
@@ -67,6 +70,7 @@ services:
     image: cypress/docker:v1
     env_file:
       - cypress-secrets.env
+      - required: false
     user: node
     volumes:
       - test-report-smoke-firefox:/report
@@ -82,6 +86,7 @@ services:
     image: cypress/docker:v1
     env_file:
       - cypress-secrets.env
+      - required: false
     user: node
     volumes:
       - test-report-api-firefox:/report
@@ -97,6 +102,7 @@ services:
     image: cypress/docker:v1
     env_file:
       - cypress-secrets.env
+      - required: false
     user: node
     volumes:
       - test-report-regression-firefox:/report
