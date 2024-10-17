@@ -14,7 +14,7 @@ export default defineConfig({
     reporter: 'cypress-mochawesome-reporter',
     reporterOptions: {
       charts: true,
-      reportPageTitle: 'custom-title 2',
+      reportPageTitle: 'custom-title 3',
       embeddedScreenshots: true,
       inlineAssets: true,
       saveAllAttempts: true,
