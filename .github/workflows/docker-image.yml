@@ -20,4 +20,4 @@ jobs:
     - name: Docker Compose Action
       uses: hoverkraft-tech/compose-action@v2.0.2
       with:
-        compose-file: "./docker-compose.dev.yml"
+        compose-file: "docker-compose.dev.yml"
