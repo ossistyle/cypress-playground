@@ -1,12 +1,12 @@
 version: '3'
 
-volumes:
-  test-report-smoke-chrome:
-  # test-report-api-chrome:
-  # test-report-regression-chrome:
-  # test-report-smoke-firefox:
-  # test-report-api-firefox:
-  # test-report-regression-firefox:
+# volumes:
+# test-report-smoke-chrome:
+# test-report-api-chrome:
+# test-report-regression-chrome:
+# test-report-smoke-firefox:
+# test-report-api-firefox:
+# test-report-regression-firefox:
 
 services:
   # report:
@@ -33,8 +33,8 @@ services:
       - path: ./cypress-secrets.env
         required: false
     user: node
-    volumes:
-      - test-report-smoke-chrome:/report
+    # volumes:
+    #   - test-report-smoke-chrome:/report
 
   # #####################################
   # api-chrome:
