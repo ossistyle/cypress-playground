@@ -5,6 +5,7 @@ describe('Regression #2', { tags: ['@regression'] }, () => {
 
   beforeEach('#2 beforeEach', () => {
     cy.log('#2 beforeEach');
+    cy.visit('/');
   });
 
   it('test #2.1', () => {

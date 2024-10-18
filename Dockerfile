@@ -22,9 +22,6 @@ FROM ${BASE_TEST_IMAGE}
 # https://github.com/cypress-io/cypress/issues/1243
 ENV CI=1
 
-ENV CYPRESS_PROJECT_ID=$CYPRESS_PROJECT_ID
-ENV CYPRESS_RECORD_KEY=$CYPRESS_RECORD_KEY
-
 # should be root
 RUN id
 
@@ -35,6 +32,7 @@ ENV CYPRESS_CACHE_FOLDER=/home/node/.cache/Cypress
 
 RUN mkdir /report
 RUN chown -R node:node /report
+
 RUN npm install --global yarn
 
 USER node
@@ -50,8 +48,14 @@ COPY --chown=node:node ./entrypoint.sh ./entrypoint.sh
 #COPY --chown=node:node ./package-lock.json ./package-lock.json
 COPY --chown=node:node ./package.json ./package.json
 COPY --chown=node:node ./tsconfig.json ./tsconfig.json
-COPY --chown=node:node ./yarn.lock ./yarn.lock
+
+# RUN chown -R node:node ${USER_HOME}
 
 RUN id
 
+#RUN npm ci 
+#RUN npm cache clean --force
+
 RUN yarn install
+
+ENTRYPOINT ["./entrypoint.sh"]
