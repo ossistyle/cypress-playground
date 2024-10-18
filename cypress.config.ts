@@ -9,10 +9,11 @@ import e2eDev from './cypress/configs/cypress.dev.config';
 
 const environments = [
   {
-    dev: e2eDev,
+    development: e2eDev,
   },
 ];
-const environment = environments[`${process.env.ENVIRONMENT}`];
+const environment = environments[`${process.env.CYPRESS_ENVIRONMENT}`];
+
 export default defineConfig(
   defu(environment, {
     e2e: {
