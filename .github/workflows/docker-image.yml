@@ -29,12 +29,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Start containers
-        run: docker compose -f ./docker-compose.dev.yml up -d --build
-
-      - name: Run Tests
-        run: yarn run cy:run
-
-      - name: Stop containers
-        if: success() || failure()
-        run: docker compose -f "docker-compose.dev.yml" down
+      # Run Docker Compose Action
+      - uses: adambirds/docker-compose-action@v1.5.0
+        with:
+          compose-file: './docker-compose.dev-yml'
+          up-flags: '--build -d'
+          down-flags: '--volumes'
+          test-container: 'smoke-chrome'
+          test-command: 'yarn run cy:run'
+        env:
+          CYPRESS_ENVIRONMENT: 'dev'

@@ -1,5 +1,13 @@
 version: '3'
 
+volumes:
+  test-report-smoke-chrome:
+  # test-report-api-chrome:
+  # test-report-regression-chrome:
+  # test-report-smoke-firefox:
+  # test-report-api-firefox:
+  # test-report-regression-firefox:
+
 services:
   # report:
   #   image: nginx
@@ -28,79 +36,71 @@ services:
     volumes:
       - test-report-smoke-chrome:/report
 
-  #####################################
-  api-chrome:
-    container_name: cypress-docker-api-chrome
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    image: cypress/docker:v1
-    env_file:
-      - path: ./cypress-secrets.env
-        required: false
-    user: node
-    volumes:
-      - test-report-api-chrome:/report
+  # #####################################
+  # api-chrome:
+  #   container_name: cypress-docker-api-chrome
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   image: cypress/docker:v1
+  #   env_file:
+  #     - path: ./cypress-secrets.env
+  #       required: false
+  #   user: node
+  #   volumes:
+  #     - test-report-api-chrome:/report
 
-  #####################################
-  regression-chrome:
-    container_name: cypress-docker-regression-chrome
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    image: cypress/docker:v1
-    env_file:
-      - path: ./cypress-secrets.env
-        required: false
-    user: node
-    volumes:
-      - test-report-regression-chrome:/report
+  # #####################################
+  # regression-chrome:
+  #   container_name: cypress-docker-regression-chrome
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   image: cypress/docker:v1
+  #   env_file:
+  #     - path: ./cypress-secrets.env
+  #       required: false
+  #   user: node
+  #   volumes:
+  #     - test-report-regression-chrome:/report
 
-  smoke-firefox:
-    container_name: cypress-docker-smoke-firefox
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    image: cypress/docker:v1
-    env_file:
-      - path: ./cypress-secrets.env
-        required: false
-    user: node
-    volumes:
-      - test-report-smoke-firefox:/report
+  # smoke-firefox:
+  #   container_name: cypress-docker-smoke-firefox
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   image: cypress/docker:v1
+  #   env_file:
+  #     - path: ./cypress-secrets.env
+  #       required: false
+  #   user: node
+  #   volumes:
+  #     - test-report-smoke-firefox:/report
 
-  #####################################
-  api-firefox:
-    container_name: cypress-docker-api-firefox
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    image: cypress/docker:v1
-    env_file:
-      - path: ./cypress-secrets.env
-        required: false
-    user: node
-    volumes:
-      - test-report-api-firefox:/report
+  # #####################################
+  # api-firefox:
+  #   container_name: cypress-docker-api-firefox
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   image: cypress/docker:v1
+  #   env_file:
+  #     - path: ./cypress-secrets.env
+  #       required: false
+  #   user: node
+  #   volumes:
+  #     - test-report-api-firefox:/report
 
-  #####################################
-  regression-firefox:
-    container_name: cypress-docker-regression-firefox
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    image: cypress/docker:v1
-    env_file:
-      - path: ./cypress-secrets.env
-        required: false
-    user: node
-    volumes:
-      - test-report-regression-firefox:/report
-
-volumes:
-  test-report-smoke-chrome:
-  test-report-api-chrome:
-  test-report-regression-chrome:
-  test-report-smoke-firefox:
-  test-report-api-firefox:
-  test-report-regression-firefox:
+  # #####################################
+  # regression-firefox:
+  #   container_name: cypress-docker-regression-firefox
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   image: cypress/docker:v1
+  #   env_file:
+  #     - path: ./cypress-secrets.env
+  #       required: false
+  #   user: node
+  #   volumes:
+  #     - test-report-regression-firefox:/report

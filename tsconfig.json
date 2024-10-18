@@ -26,6 +26,6 @@
     "noImplicitReturns": false,
     "skipLibCheck": false
   },
-  "include": ["cypress"],
+  "include": ["cypress", "cypress.config.ts"],
   "exclude": ["node_modules"]
 }
