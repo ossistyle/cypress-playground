@@ -17,8 +17,6 @@ services:
       file: docker-compose.base.yml
       service: smoke-chrome
     command: 'yarn run cy:run --browser chrome --env grepTags=@smoke,grepFilterSpecs=true'
-    env:
-      CYPRESS_ENVIRONMENT: 'development'
 
   # api-chrome:
   #   extends:
