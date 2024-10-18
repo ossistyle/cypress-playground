@@ -32,6 +32,9 @@ jobs:
       - name: Start containers
         run: docker compose -f ./docker-compose.dev.yml up -d --build
 
+      - name: Run Tests
+        run: yarn run cy:run
+
       - name: Stop containers
         if: success() || failure()
         run: docker compose -f "docker-compose.dev.yml" down
