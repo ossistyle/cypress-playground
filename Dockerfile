@@ -54,4 +54,4 @@ COPY --chown=node:node ./yarn.lock ./yarn.lock
 
 RUN id
 
-ENTRYPOINT [ "yarn", "install" ]
+CMD [ "yarn", "install" ]
