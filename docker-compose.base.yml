@@ -16,8 +16,6 @@ services:
 
   #####################################
   smoke-chrome:
-    depends_on:
-      - report
     container_name: cypress-docker-smoke-chrome
     build:
       context: .
@@ -32,8 +30,6 @@ services:
 
   #####################################
   api-chrome:
-    depends_on:
-      - report
     container_name: cypress-docker-api-chrome
     build:
       context: .
@@ -48,8 +44,6 @@ services:
 
   #####################################
   regression-chrome:
-    depends_on:
-      - report
     container_name: cypress-docker-regression-chrome
     build:
       context: .
@@ -63,8 +57,6 @@ services:
       - test-report-regression-chrome:/report
 
   smoke-firefox:
-    depends_on:
-      - report
     container_name: cypress-docker-smoke-firefox
     build:
       context: .
@@ -79,8 +71,6 @@ services:
 
   #####################################
   api-firefox:
-    depends_on:
-      - report
     container_name: cypress-docker-api-firefox
     build:
       context: .
@@ -95,8 +85,6 @@ services:
 
   #####################################
   regression-firefox:
-    depends_on:
-      - report
     container_name: cypress-docker-regression-firefox
     build:
       context: .
