@@ -20,15 +20,14 @@ jobs:
 
     name: smoke-tests-dev
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: adambirds/docker-compose-action@v1.5.0
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
         with:
-          compose-file: './docker-compose.dev.yml'
-          up-flags: '--build -d'
-          down-flags: '--volumes'
-          test-container: 'smoke-chrome'
-          # test-command: 'yarn run cy:run --browser chrome --env grepTags=@smoke,grepFilterSpecs=true'
+          install-command: yarn install
+          command: yarn run cy:run --browser chrome
+          #test-command: 'yarn run cy:run --browser chrome --env grepTags=@smoke,grepFilterSpecs=true'
         env:
           # Set up the Cypress Cloud project ID and record key as environment variables
           # If the Actions secret EXAMPLE_PROJECT_ID is not defined then
@@ -37,3 +36,5 @@ jobs:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_grepFilterSpecs: true
+          CYPRESS_grepTags: '@smoke'
