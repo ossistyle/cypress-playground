@@ -50,6 +50,7 @@ COPY --chown=node:node ./entrypoint.sh ./entrypoint.sh
 COPY --chown=node:node ./package-lock.json ./package-lock.json
 COPY --chown=node:node ./package.json ./package.json
 COPY --chown=node:node ./tsconfig.json ./tsconfig.json
+COPY --chown=node:node ./yarn.lock ./yarn.lock
 
 RUN id
 
