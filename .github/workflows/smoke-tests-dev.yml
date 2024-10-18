@@ -28,7 +28,7 @@ jobs:
           up-flags: '--build -d'
           down-flags: '--volumes'
           test-container: 'smoke-chrome'
-          test-command: 'yarn run tsc:build'
+          test-command: 'yarn run cy:run --browser chrome --env grepTags=@smoke,grepFilterSpecs=true'
         env:
           # Set up the Cypress Cloud project ID and record key as environment variables
           # If the Actions secret EXAMPLE_PROJECT_ID is not defined then
