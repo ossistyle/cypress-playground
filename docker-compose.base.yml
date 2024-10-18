@@ -1,18 +1,18 @@
 version: '3'
 
 services:
-  report:
-    image: nginx
-    container_name: nginx
-    ports:
-      - '81:80'
-    volumes:
-      - test-report-smoke-chrome:/usr/share/nginx/html/smoke/chrome
-      - test-report-api-chrome:/usr/share/nginx/html/api/chrome
-      - test-report-regression-chrome:/usr/share/nginx/html/regression/chrome
-      - test-report-smoke-firefox:/usr/share/nginx/html/smoke/firefox
-      - test-report-api-firefox:/usr/share/nginx/html/api/firefox
-      - test-report-regression-firefox:/usr/share/nginx/html/regression/firefox
+  # report:
+  #   image: nginx
+  #   container_name: nginx
+  #   ports:
+  #     - '81:80'
+  #   volumes:
+  #     - test-report-smoke-chrome:/usr/share/nginx/html/smoke/chrome
+  #     - test-report-api-chrome:/usr/share/nginx/html/api/chrome
+  #     - test-report-regression-chrome:/usr/share/nginx/html/regression/chrome
+  #     - test-report-smoke-firefox:/usr/share/nginx/html/smoke/firefox
+  #     - test-report-api-firefox:/usr/share/nginx/html/api/firefox
+  #     - test-report-regression-firefox:/usr/share/nginx/html/regression/firefox
 
   #####################################
   smoke-chrome:

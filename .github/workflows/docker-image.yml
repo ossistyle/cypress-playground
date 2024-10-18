@@ -1,32 +1,37 @@
 name: Docker Compose Action
 
+env:
+  # Set up the Cypress Cloud project ID and record key as environment variables
+  # If the Actions secret EXAMPLE_PROJECT_ID is not defined then
+  # the projectId is taken from cypress.json (v9) or cypress.config.js (v10 and later).
+  # If the Actions secret EXAMPLE_RECORDING_KEY is not defined then recording jobs are skipped.
+  CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+  CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 on:
   push:
     branches:
-    - main
-    - test
-    - test/**
-    - features/**
-    # - dependabot/**
+      - main
+      - test
+      - test/**
+      - features/**
   pull_request:
     branches:
-    - main
+      - main
 
 jobs:
   docker:
     timeout-minutes: 10
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Start containers
-      env:
-        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-        CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-      run: docker compose -f ./docker-compose.dev.yml up -d --build
+      - name: Start containers
+        run: docker compose -f ./docker-compose.dev.yml up -d --build
 
-    - name: Stop containers
-      if: success() || failure()
-      run: docker compose -f "docker-compose.dev.yml" down
+      - name: Stop containers
+        if: success() || failure()
+        run: docker compose -f "docker-compose.dev.yml" down

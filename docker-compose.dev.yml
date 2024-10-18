@@ -1,46 +1,44 @@
 services:
-  report:
-    extends:
-      file: docker-compose.base.yml
-      service: report
+  # report:
+  #   extends:
+  #     file: docker-compose.base.yml
+  #     service: report
 
   smoke-chrome:
     extends:
       file: docker-compose.base.yml
       service: smoke-chrome
-    command: '--config-file cypress/configs/cypress.dev.config.ts --browser chrome --env grepTags=@smoke,grepFilterSpecs=true'
+    command: 'yarn run cy:dev --config-file cypress/configs/cypress.dev.config.ts --browser chrome --env grepTags=@smoke,grepFilterSpecs=true'
 
-  #####################################
   api-chrome:
     extends:
       file: docker-compose.base.yml
       service: api-chrome
-    command: '--config-file cypress/configs/cypress.dev.config.ts --browser chrome --env grepTags=@api,grepFilterSpecs=true'
+    command: 'yarn run cy:dev --config-file cypress/configs/cypress.dev.config.ts --browser chrome --env grepTags=@api,grepFilterSpecs=true'
 
   regression-chrome:
     extends:
       file: docker-compose.base.yml
       service: regression-chrome
-    command: '--config-file cypress/configs/cypress.dev.config.ts --browser chrome --env grepTags=@regression,grepFilterSpecs=true'
+    command: 'yarn run cy:dev --config-file cypress/configs/cypress.dev.config.ts --browser chrome --env grepTags=@regression,grepFilterSpecs=true'
 
   smoke-firefox:
     extends:
       file: docker-compose.base.yml
       service: smoke-firefox
-    command: '--config-file cypress/configs/cypress.dev.config.ts --browser firefox --env grepTags=@smoke,grepFilterSpecs=true'
+    command: 'yarn run cy:dev --config-file cypress/configs/cypress.dev.config.ts --browser firefox --env grepTags=@smoke,grepFilterSpecs=true'
 
-  #####################################
   api-firefox:
     extends:
       file: docker-compose.base.yml
       service: api-firefox
-    command: '--config-file cypress/configs/cypress.dev.config.ts --browser firefox --env grepTags=@api,grepFilterSpecs=true'
+    command: 'yarn run cy:dev --config-file cypress/configs/cypress.dev.config.ts --browser firefox --env grepTags=@api,grepFilterSpecs=true'
 
   regression-firefox:
     extends:
       file: docker-compose.base.yml
       service: regression-firefox
-    command: '--config-file cypress/configs/cypress.dev.config.ts --browser firefox --env grepTags=@regression,grepFilterSpecs=true'
+    command: 'yarn run cy:dev --config-file cypress/configs/cypress.dev.config.ts --browser firefox --env grepTags=@regression,grepFilterSpecs=true'
 
 volumes:
   test-report-smoke-chrome:

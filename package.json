@@ -41,10 +41,10 @@
     "eslint:fix": "eslint . --ext .ts --fix",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:dev:open": "npm run cy:open -- --config-file ./cypress/configs/cypress.dev.config.ts",
-    "cy:dev:run": "npm run cy:run -- --config-file ./cypress/configs/cypress.dev.config.ts",
+    "cy:dev:open": "yarn run cy:open --",
+    "cy:dev:run": "yarn run cy:run --",
     "prepare": "is-ci || husky",
-    "tsc:build": "npx tsc --build"
+    "tsc:build": "yarn tsc --build"
   },
   "version": "1.0.0"
 }
