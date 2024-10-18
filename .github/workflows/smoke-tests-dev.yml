@@ -25,6 +25,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
+          record: true
           install-command: yarn install
           command: yarn run cy:run --browser chrome
           #test-command: 'yarn run cy:run --browser chrome --env grepTags=@smoke,grepFilterSpecs=true'
@@ -37,4 +38,4 @@ jobs:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CYPRESS_grepFilterSpecs: true
-          CYPRESS_grepTags: '@smoke'
+          CYPRESS_grepTags: '@api'
