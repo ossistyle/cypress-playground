@@ -47,11 +47,11 @@ COPY --chown=node:node ./cypress ./cypress
 COPY --chown=node:node ./cypress.config.ts ./cypress.config.ts
 COPY --chown=node:node *./cypress-secrets.env ./cypress-secrets.env
 COPY --chown=node:node ./entrypoint.sh ./entrypoint.sh
-COPY --chown=node:node ./package-lock.json ./package-lock.json
+#COPY --chown=node:node ./package-lock.json ./package-lock.json
 COPY --chown=node:node ./package.json ./package.json
 COPY --chown=node:node ./tsconfig.json ./tsconfig.json
 COPY --chown=node:node ./yarn.lock ./yarn.lock
 
 RUN id
 
-CMD [ "yarn", "install" ]
+RUN yarn install
