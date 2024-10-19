@@ -9,9 +9,11 @@ ARG FIREFOX_VERSION='131.0.2'
 
 ARG CYPRESS_VERSION='13.15.0'
 
+# Latest Yarn version: https://www.npmjs.com/package/yarn
+ARG YARN_VERSION='1.22.22'
+
 # Disable other browsers
 ARG EDGE_VERSION=
-ARG YARN_VERSION=
 
 # Latest cypress factory version: https://hub.docker.com/r/cypress/factory/tags
 ARG BASE_TEST_IMAGE='cypress/factory:4.2.1'
@@ -30,11 +32,11 @@ RUN mv /root/.cache /home/node/.cache
 # make sure cypress looks in the right place
 ENV CYPRESS_CACHE_FOLDER=/home/node/.cache/Cypress
 
+# create report dir
 RUN mkdir /report
 RUN chown -R node:node /report
 
-RUN npm install --global yarn
-
+# switch user to node - exists by default
 USER node
 
 WORKDIR /home/node/app
@@ -45,17 +47,12 @@ COPY --chown=node:node ./cypress ./cypress
 COPY --chown=node:node ./cypress.config.ts ./cypress.config.ts
 COPY --chown=node:node *./cypress-secrets.env ./cypress-secrets.env
 COPY --chown=node:node ./entrypoint.sh ./entrypoint.sh
-#COPY --chown=node:node ./package-lock.json ./package-lock.json
 COPY --chown=node:node ./package.json ./package.json
 COPY --chown=node:node ./tsconfig.json ./tsconfig.json
 
-# RUN chown -R node:node ${USER_HOME}
-
 RUN id
 
-#RUN npm ci 
-#RUN npm cache clean --force
-
+# install dependencies
 RUN yarn install
 
-ENTRYPOINT ["./entrypoint.sh"]
+# ENTRYPOINT ["./entrypoint.sh"]

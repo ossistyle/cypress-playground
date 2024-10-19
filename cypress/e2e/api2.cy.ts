@@ -45,6 +45,7 @@ describe('Api #2', { tags: ['@regression'] }, () => {
     });
 
     it('test #2.1.3 with tag @smoke', { tags: ['@smoke'] }, () => {
+      cy.log(JSON.stringify(Cypress.config()));
       expect(false).to.be.false;
     });
 

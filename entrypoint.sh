@@ -1,9 +1,11 @@
 #! /bin/bash
 
-RECORD="--record false"
+CYPRESS_RECORD="--record false"
 if [[ "$CYPRESS_RECORD_KEY" != "" ]]; then
-    RECORD=" --record"
+    CYPRESS_RECORD=" --record"
 fi
+
+export CYPRESS_RECORD
 
 stat $PWD
 
@@ -13,9 +15,11 @@ yarn cypress verify
 yarn cypress info
 yarn cypress version
 
-rm -r /report/*
+rm -r -v -f /report/*
 
 # report dir should exist and be bound to a named volume
-cp -r -v /home/node/app/cypress/reports/* /report
+if [ -d /home/node/app/cypress/reports ]; then
+    cp -r -f /home/node/app/cypress/reports/* /report
+fi
 
 exit 0;

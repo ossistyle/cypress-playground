@@ -7,14 +7,15 @@
     "airbnb-typescript/base",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:cypress/recommended"
+    "plugin:cypress/recommended",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "cypress", "chai-friendly"],
+  "plugins": ["@typescript-eslint", "cypress", "prettier", "chai-friendly"],
+  // https://github.com/dolthub/dolthub-cypress/blob/main/.eslintrc.json
   "root": true,
   // https://github.com/dolthub/dolthub-cypress/blob/main/.eslintrc.json
   "rules": {
@@ -24,8 +25,8 @@
         "default": "array-simple"
       }
     ],
-    "@typescript-eslint/await-thenable": "error",
-    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/await-thenable": "error", // error
+    "@typescript-eslint/explicit-function-return-type": "error", // error
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/naming-convention": [
       "error",
@@ -67,7 +68,7 @@
     "@typescript-eslint/no-namespace": "error",
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/no-shadow": "error",
-    "@typescript-eslint/no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": "off", // use chai-friendly/no-unused-expressions instead
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
@@ -91,14 +92,14 @@
     "cypress/no-unnecessary-waiting": "warn",
     "import/prefer-default-export": "off",
     "no-nested-ternary": "warn",
-    "no-param-reassign": "error",
+    "no-param-reassign": "error", // error
     "no-plusplus": [
       "error",
       {
         "allowForLoopAfterthoughts": true
       }
     ],
-    "no-return-assign": "error",
+    "no-return-assign": "error", // error
     "no-sequences": "error",
     "no-underscore-dangle": "off",
     "no-unused-expressions": "off",
@@ -107,7 +108,7 @@
       "error",
       { "classes": false, "functions": false, "variables": false }
     ],
-    "prefer-regex-literals": "error",
+    "prefer-regex-literals": "error", // error
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
   },
   "settings": {

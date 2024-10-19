@@ -24,15 +24,15 @@ services:
 
   #####################################
   smoke-chrome:
-    container_name: cypress-docker-smoke-chrome
+    container_name: cypress-smoke-chrome
     build:
       context: .
       dockerfile: ./Dockerfile
     image: cypress/docker:v1
-    env_file:
-      - path: ./cypress-secrets.env
-        required: false
     user: node
+    env_file:
+      - path: .env
+        required: false
     # volumes:
     #   - test-report-smoke-chrome:/report
 

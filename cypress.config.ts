@@ -7,11 +7,10 @@ import failFast from 'cypress-fail-fast/plugin';
 import defu from 'defu';
 import e2eDev from './cypress/configs/cypress.dev.config';
 
-const environments = [
-  {
-    development: e2eDev,
-  },
-];
+// eslint-disable-next-line import/no-extraneous-dependencies, @typescript-eslint/no-var-requires
+require('dotenv').config();
+
+const environments = { development: e2eDev };
 const environment = environments[`${process.env.CYPRESS_ENVIRONMENT}`];
 
 export default defineConfig(
