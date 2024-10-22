@@ -16,12 +16,8 @@ services:
     extends:
       file: docker-compose.base.yml
       service: smoke-chrome
-    command: yarn run cy:run ${CYPRESS_RECORD} --browser chrome --env grepTags=@smoke,grepFilterSpecs=true
-    env_file:
-      # - path: .env
-      #   required: false
-      - path: dev.env
-        required: false
+    command: yarn run cy:dev:run --record --browser chrome --env grepTags=@smoke,grepFilterSpecs=true
+
   # api-chrome:
   #   extends:
   #     file: docker-compose.base.yml
