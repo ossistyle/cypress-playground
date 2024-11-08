@@ -1,11 +1,19 @@
-/* eslint-disable @typescript-eslint/naming-convention */
+// eslint-disable-next-line import/no-extraneous-dependencies
+import cypressGrepPlugin from '@bahmutov/cy-grep/src/plugin';
 import { defineConfig } from 'cypress';
-
-import cypressGrepPlugin from '@cypress/grep/src/plugin';
 import failFast from 'cypress-fail-fast/plugin';
 
 export default defineConfig({
   e2e: {
+    setupNodeEvents(on, config) {
+      failFast(on, config);
+      // eslint-disable-next-line global-require, @typescript-eslint/no-var-requires
+      require('cypress-mochawesome-reporter/plugin')(on);
+
+      cypressGrepPlugin(config);
+
+      return config;
+    },
     baseUrl: null,
     supportFile: 'cypress/support/index.{js,jsx,ts,tsx}',
     experimentalRunAllSpecs: true,
@@ -17,24 +25,9 @@ export default defineConfig({
       reportPageTitle: 'custom-title 4',
       embeddedScreenshots: true,
       inlineAssets: true,
-      saveAllAttempts: true,
     },
-    env: {
-      FAIL_FAST_STRATEGY: 'spec',
-      FAIL_FAST_ENABLED: true,
-      FAIL_FAST_BAIL: 0,
-      grepIntegrationFolder: './',
-      grepFilterSpecs: true,
-      grepOmitFiltered: true,
-    },
+
     video: true,
     screenshotOnRunFailure: true,
-    setupNodeEvents(on, config) {
-      cypressGrepPlugin(config);
-      failFast(on, config);
-      // eslint-disable-next-line global-require, @typescript-eslint/no-var-requires
-      require('cypress-mochawesome-reporter/plugin')(on);
-      return config;
-    },
   },
 });
