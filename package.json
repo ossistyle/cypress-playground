@@ -9,6 +9,7 @@
   },
   "description": "Cypress Typescript Sample",
   "devDependencies": {
+    "@bahmutov/cy-grep": "^1.11.6",
     "@types/node": "^22.5.2",
     "@typescript-eslint/eslint-plugin": "7.1.0",
     "@typescript-eslint/parser": "7.0.0",
@@ -41,8 +42,8 @@
     "eslint:fix": "eslint . --ext .ts --fix",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:dev:open": "npm run cy:open -- --config-file ./cypress/configs/cypress.dev.config.ts",
-    "cy:dev:run": "npm run cy:run -- --config-file ./cypress/configs/cypress.dev.config.ts",
+    "cy:dev:open": "npm run cy:open -- --config-file ./cypress.dev.config.ts",
+    "cy:dev:run": "npm run cy:run -- --config-file ./cypress.dev.config.ts",
     "prepare": "is-ci || husky",
     "tsc:build": "npx tsc --build"
   },

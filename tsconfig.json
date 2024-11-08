@@ -8,7 +8,8 @@
       "cypress",
       "cypress-fail-fast",
       "@cypress/grep",
-      "cypress-mochawesome-reporter"
+      "cypress-mochawesome-reporter",
+      "@bahmutov/cy-grep"
     ],
     "resolveJsonModule": true,
     "moduleResolution": "node",
@@ -26,6 +27,6 @@
     "noImplicitReturns": false,
     "skipLibCheck": false
   },
-  "include": ["cypress"],
+  "include": ["**/*.ts"],
   "exclude": ["node_modules"]
 }
