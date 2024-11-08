@@ -1,4 +1,4 @@
-describe('Smoke #1', { failFast: { enabled: true }, tags: ['@smoke'] }, () => {
+describe('Smoke #1', { tags: ['@smoke'] }, () => {
   before('#1 before', () => {
     cy.log('global before');
   });

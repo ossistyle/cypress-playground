@@ -1,5 +1,7 @@
 import 'cypress-fail-fast';
 
+import 'cypress-mochawesome-reporter/register';
+
 // load and register the grep feature using "require" function
 // https://github.com/cypress-io/cypress/tree/develop/npm/grep
 // import registerCypressGrep from '@cypress/grep/src/support';

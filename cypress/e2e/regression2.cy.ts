@@ -5,6 +5,7 @@ describe('Regression #2', { tags: ['@regression'] }, () => {
 
   beforeEach('#2 beforeEach', () => {
     cy.log('#2 beforeEach');
+    cy.visit('/');
   });
 
   it('test #2.1', () => {
@@ -12,10 +13,6 @@ describe('Regression #2', { tags: ['@regression'] }, () => {
   });
 
   it('test #2.1', () => {
-    cy.wrap({}).then(() => {
-      // @ts-expect-error works as expected
-      cy.state('runnable').ctx.skip();
-    });
     expect(false).to.be.false;
   });
 
@@ -37,15 +34,12 @@ describe('Regression #2', { tags: ['@regression'] }, () => {
     });
 
     it('test #2.1.2', () => {
-      cy.wrap({}).then(() => {
-        // @ts-expect-error works as expected
-        cy.state('runnable').ctx.skip();
-      });
       expect(false).to.be.false;
     });
 
     it('test #2.1.3 with tag @smoke', { tags: ['@smoke'] }, () => {
-      expect(false).to.be.false;
+      cy.get('input').should('exist');
+      expect(true).to.be.false;
     });
 
     afterEach(() => {

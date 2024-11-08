@@ -5,17 +5,15 @@ describe('Regression #1', { tags: ['@regression'] }, () => {
 
   beforeEach('#1 beforeEach', () => {
     cy.log('#1 beforeEach');
+    cy.visit('/');
   });
 
   it('test #1.1', () => {
+    cy.get('input').should('exist');
     expect(true).to.be.true;
   });
 
   it('test #1.2', () => {
-    cy.wrap({}).then(() => {
-      // @ts-expect-error works as expected
-      cy.state('runnable').ctx.skip();
-    });
     expect(false).to.be.false;
   });
 
@@ -37,10 +35,6 @@ describe('Regression #1', { tags: ['@regression'] }, () => {
     });
 
     it('test #1.1.2', () => {
-      cy.wrap({}).then(() => {
-        // @ts-expect-error works as expected
-        cy.state('runnable').ctx.skip();
-      });
       expect(false).to.be.false;
     });
 

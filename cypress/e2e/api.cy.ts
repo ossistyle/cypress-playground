@@ -5,6 +5,7 @@ describe('Api #1', { tags: ['@api'], retries: 1 }, () => {
 
   beforeEach('#1 beforeEach', () => {
     cy.log('#1 beforeEach');
+    cy.visit('/');
   });
 
   it('test #1.1', () => {
@@ -12,10 +13,6 @@ describe('Api #1', { tags: ['@api'], retries: 1 }, () => {
   });
 
   it('test #1.2', () => {
-    cy.wrap({}).then(() => {
-      // @ts-expect-error works as expected
-      cy.state('runnable').ctx.skip();
-    });
     expect(false).to.be.false;
   });
 
@@ -37,10 +34,6 @@ describe('Api #1', { tags: ['@api'], retries: 1 }, () => {
     });
 
     it('test #1.1.2', () => {
-      cy.wrap({}).then(() => {
-        // @ts-expect-error works as expected
-        cy.state('runnable').ctx.skip();
-      });
       expect(false).to.be.false;
     });
 
