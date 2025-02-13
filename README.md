@@ -1,7 +1,3 @@
-# Owner
-
-[Thomas Hoffmann](https://ibm-ixorange.slack.com/team/W93V4KPHS)
-
 # Cypress Sample
 
 Cypress automation framework skeleton with Typescript + ESlint + Prettier + Docker/Docker-Compose.
