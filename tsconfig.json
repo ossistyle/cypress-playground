@@ -7,7 +7,6 @@
       "node",
       "cypress",
       "cypress-fail-fast",
-      "@cypress/grep",
       "cypress-mochawesome-reporter",
       "@bahmutov/cy-grep"
     ],
@@ -27,6 +26,9 @@
     "noImplicitReturns": false,
     "skipLibCheck": false
   },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "cypress/**/*.ts",
+    "node_modules/@bahmutov/cy-grep/src/tags-are-strings.d.ts"
+  ],
+  "exclude": []
 }

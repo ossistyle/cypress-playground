@@ -1,7 +1,6 @@
 {
   "author": "Thomas Hoffmann",
   "dependencies": {
-    "@cypress/grep": "^4.1.0",
     "cypress-fail-fast": "^7.1.1",
     "defu": "^6.1.4",
     "is-ci": "4.1.0",
